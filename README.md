@@ -1,6 +1,8 @@
 # Trabajo-Final-Grupo5
 El objetivo de este programa es ayudar a los padres en que puedan estar al tanto de su hijo en la escuela, ya sea asistencia, rendimiento, 
 notas o (imagen por ver)
+
+
 1.- El usuario (los padres) comenzaran a digitar el id de su hijo, otorgado por su escuela.
 2.- Luego de que el usuario ingresara el ID se comprobora si cumple los requisitos. 
 3.- Inmeditamente de comprobarlo y verificarlos, se mostrara un menu para el usuario.
