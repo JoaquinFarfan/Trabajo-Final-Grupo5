@@ -1,1 +1,14 @@
-
+nom = str(input('Ingrese su Nombre Completo: '))
+apell = str(input('Ingrese su Apellido Completo: '))
+dni = int(input('Ingrese su numero de DNI: '))
+while dni < 10000000: 
+    print('Error vuelva a inggresar su numero de DNI: ')
+    break
+else:
+    print('Bienvenid@ ', nom,'. A continuación ingrese el id de su hijo: ')
+    id_hijo = int(input('Ingrese el ID: '))
+    while id_hijo< 1001:
+        print('Vuelva a ingresar el ID correcto.',)
+        break
+    else: 
+        print('Ha ingresado correctamente, por favor vea las opciones disponibles')
