@@ -1,1 +1,13 @@
+while(1):
+    seleccion=input("<1>Notas del año escolar -- <2> Logros del año escolar -- <3>salir --- Eliga una opcion: ")
+    if seleccion=="1":
+       
+
+    elif seleccion=="2" :
+      
+    else:  
+        print("Usted ha decidio salir")
+        
+        break
+
 
