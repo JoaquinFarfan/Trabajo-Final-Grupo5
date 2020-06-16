@@ -1,7 +1,7 @@
 nom = str(input('Ingrese su Nombre Completo: '))
 apell = str(input('Ingrese su Apellido Completo: '))
-dni = int(input('Ingrese su numero de DNI: '))
-while dni < 10000000: 
+dni = str(input('Ingrese su numero de DNI: '))
+while len(str(dni)) != 8: 
     print('Error vuelva a ingresar su numero de DNI: ')
     dni = int(input('Ingrese otra vez su DNI:'))
     
