@@ -1,6 +1,5 @@
 # Trabajo-Final-Grupo5
-El objetivo de este programa es ayudar a los padres en que puedan estar al tanto de su hijo en la escuela, ya sea asistencia, rendimiento, 
-notas o (imagen por ver)
+El objetivo de este programa es ayudar a los padres en que puedan visualizar el año academico de su hijo por medio de las notas (numpy) que mostrara todas las notas acumuladas y su promedio final. A demás por medio 
 
 
 1.- El usuario (los padres) comenzaran a digitar el id de su hijo, otorgado por su escuela.
