@@ -1,8 +1,29 @@
+import numpy as np
+#FUNCIÓN DE LA OPCIÓN 1 DEL MENU
+def mostrar(n,cursos):
+    print("  CURSOS",end="")
+    for i in range(4):
+        print("       ",str(i+1),"BIMESTRE",end="    ")
+    print()
+    for i in range(6):
+        print(cursos[i],"| ",end="      ")
+        for j in range(4):
+            print(n[i][j],"\t",end="                ")
+        print()
+    return "OPCIÓN FINALIZADA"
+    
+#LA OPCIÓN 1 DE MOSTRAR NOTAS
+print(mostrar(n,cursos))
+
+
+
 while(1):
     seleccion=input("<1>Notas del año escolar -- <2> Logros del año escolar -- <3>salir --- Eliga una opcion: ")
+    #CREACIÓN DE LA MATRIZ ANTES DEL MENU
+    cursos = ["MATEMATICA"," LENGUAJE ","  INGLES  ","  CIENCIA ","  DEPORTE ","   ARTE   "]
+    n = np.random.randint(5,21,size=(6,4))
     if seleccion=="1":
-       
-
+    print(mostrar(n,cursos))
     elif seleccion=="2" :
       
     else:  
