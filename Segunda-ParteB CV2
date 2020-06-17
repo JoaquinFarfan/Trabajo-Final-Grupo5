@@ -1,10 +1,7 @@
 import cv2
-def evidencias():
-    image = cv2.imread('evidencia555.png')
-
-    cv2.imshow('image',image)
-    cv2.waitKey(4000)
-
-def main():
-    evidencias()
-main()
+if(opcion == 2):
+                print("LOS LOGROS DEL ALUMNO ",id_hijo,"SON: ")
+                image = cv2.imread('evidencia555.png')
+                cv2.imshow('image',image)
+                cv2.waitKey(4000)
+            opcion=int(input("INGRESE OTRA OPCIÓN: "))
