@@ -1,0 +1,91 @@
+import numpy as np
+import cv2
+
+def mostrar(n,cursos):
+    print("  CURSOS",end="")
+    for i in range(4):
+        print("       ",str(i+1),"BIMESTRE",end="    ")
+    print()
+    for i in range(6):
+        print(cursos[i],"| ",end="      ")
+        for j in range(4):
+            print(n[i][j],"\t",end="                ")
+        print()
+    return "COMENTARIO DEL TUTOR: ¡PUEDES SEGUIR MEJORANDO CON MÁS ESFUERZO!"
+def datos():
+    pregunta = "SI"
+    
+    while(pregunta == "SI" or pregunta == "si"):
+
+        print("=============== DATOS DEL PADRE RESPONSABLE ===============")
+
+        nom = str(input('Ingrese su Nombre Completo: '))
+        apell = str(input('Ingrese su Apellido Completo: '))
+        dni = str(input('Ingrese su numero de DNI: '))
+        while len(str(dni)) != 8:
+            print('Error vuelva a ingresar su numero de DNI: ')
+            dni = int(input('Ingrese otra vez su DNI:'))
+
+        print("=============== ID DEL ALUMNO ===============")
+
+        print('Bienvenid@ ', nom,'. A continuación ingrese el id de su hijo: ')
+        id_hijo = int(input('Ingrese el ID: '))
+        while id_hijo< 1001:
+            print('Vuelva a ingresar el ID correcto.')
+            id_hijo = int(input('Ingrese el ID: '))
+        print("=============== INGRESO CORRECTAMENTE ===============")
+        break
+def menu():
+       
+        
+
+        print("          MENU")
+        print("<1> CALCULAR SEGUNDO MAYOR")
+        print("<2> CALCULAR PROMEDIO")
+        print("<3> SALIR")
+def main():
+    
+    pregunta = "SI"
+    list=[]
+    while(pregunta == "SI" or pregunta == "si"):
+                 
+
+        cursos = ["MATEMATICA"," LENGUAJE ","  INGLES  ","  CIENCIA ","  DEPORTE ","   ARTE   "]
+        n = np.random.randint(5,21,size=(6,4))
+
+        opcion = int(input("OPCIÓN: "))
+        while(opcion!=3):
+            if(opcion == 1):
+                print("LAS NOTAS DEL ALUMNO SON: ")
+                print("=====================================================================================")
+                print(mostrar(n,cursos))
+                print("=====================================================================================")
+            opcion=int(input("INGRESE OTRA OPCIÓN: "))
+            if ( opcion==3):
+                comentario = input("USTED SALIÓ DEL PROGRAMA, ¿QUIERE DEJAR UN COMENTARIO? SI/NO: ")
+                if (comentario == "SI" or comentario == "si"):
+                    coment = input("COMENTARIO: ")
+                    list.append(coment)
+        pregunta = input("DESEA VER LAS NOTAS DE OTRO ALUMNO SI/NO: ")
+
+    print("===========COMENTARIOS DEL PROGRAMA===========")
+    if(len(list)==0):
+        print("NO HAY COMENTARIOS")
+    u = 1
+    for i in list:
+        print(u,"|",i)
+        u=u+1
+def show():
+    image = cv2.imread('3322.jpg')
+    cv2.imshow('image',image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+def principal():
+    show()
+    datos() 
+    menu()
+    main()
+
+    
+principal()
