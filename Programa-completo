@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-
+#Importamos las librerias que utilizamos numpy y cv2
 def mostrar(n,cursos):
     print("  CURSOS",end="")
     for i in range(4):
@@ -12,7 +12,7 @@ def mostrar(n,cursos):
             print(n[i][j],"\t",end="                ")
         print()
     return "COMENTARIO DEL TUTOR: ¡PUEDES SEGUIR MEJORANDO CON MÁS ESFUERZO!"
-def datos():
+def datos(): #Función que se encargara del registro del padre y del id del alumno
     pregunta = "SI"
     
     while(pregunta == "SI" or pregunta == "si"):
@@ -35,7 +35,7 @@ def datos():
             id_hijo = int(input('Ingrese el ID: '))
         print("=============== INGRESO CORRECTAMENTE ===============")
         break
-def menu():
+def menu(): #Menu de nuestro programa donde se visualizara las opciones para el padre, contendra 3 opciones
        
         
 
@@ -43,7 +43,7 @@ def menu():
         print("<1> CALCULAR SEGUNDO MAYOR")
         print("<2> LOGROS DEL ESTUDIANTE")
         print("<3> SALIR")
-def main():
+def main(): #Señalamos validaciones para que si el usuario ingresa SI o si se haga valido.
     
     pregunta = "SI"
     list=[]
@@ -55,13 +55,13 @@ def main():
 
         opcion = int(input("OPCIÓN: "))
         while(opcion!=3):
-            if(opcion == 1):
+            if(opcion == 1): #Si el usuario ingresa la opción 1 se procede a llamar a la función def mostrar(n,cursos)
                 print("LAS NOTAS DEL ALUMNO SON: ")
                 print("=====================================================================================")
                 print(mostrar(n,cursos))
                 print("=====================================================================================")
             
-            if(opcion == 2):
+            if(opcion == 2): #Si el usuario ingresa la opcion '2' se procede a imprimir los logros del hijo y una matriz creada por print
                 print("LOS LOGROS DEL ALMUNO SON:")
                 print("=====================================================================================")
                 print("Competencias evualuadas:")
@@ -112,7 +112,7 @@ def main():
                 print("                         18                A   A   A           A                    ")
                 print("====================================================================================")
             opcion=int(input("INGRESE OTRA OPCIÓN: "))
-        if ( opcion==3):
+        if ( opcion==3): #Si el usuario ingresa la opción 3 se le preguntara si quiere dejar un comentario o no. y se guardara el comentario
             comentario = input("USTED SALIÓ DEL PROGRAMA, ¿QUIERE DEJAR UN COMENTARIO? SI/NO: ")
             if (comentario == "SI" or comentario == "si"):
                 coment = input("COMENTARIO: ")
@@ -126,7 +126,7 @@ def main():
     for i in list:
         print(u,"|",i)
         u=u+1
-def show():
+def show(): #Con esta función lo que se busca es mostrar la imagen de bienvenida al usuario para que sepa que ha iniciado el programa
     image = cv2.imread('3322.jpg')
     cv2.imshow('image',image)
     cv2.waitKey(0)
