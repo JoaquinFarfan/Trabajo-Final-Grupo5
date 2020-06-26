@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
-#Importamos las librerias que utilizamos numpy y cv2
-def mostrar(n,cursos):
+
+def mostrar(n,cursos): #Función 1 con numpy mostrando las notas de los 6 cursos
     print("  CURSOS",end="")
     for i in range(4):
         print("       ",str(i+1),"BIMESTRE",end="    ")
@@ -12,19 +12,19 @@ def mostrar(n,cursos):
             print(n[i][j],"\t",end="                ")
         print()
     return "COMENTARIO DEL TUTOR: ¡PUEDES SEGUIR MEJORANDO CON MÁS ESFUERZO!"
-def datos(): #Función que se encargara del registro del padre y del id del alumno
+def datos():    #Función de datos para solicitar todos los requisitos de ingreso
     pregunta = "SI"
     
     while(pregunta == "SI" or pregunta == "si"):
 
-        print("=============== DATOS DEL PADRE RESPONSABLE ===============")
+        print("=============== DATOS DEL PADRE RESPONSABLE ===============") #Se solicita todos los datos del padre y el DNI
 
         nom = str(input('Ingrese su Nombre Completo: '))
         apell = str(input('Ingrese su Apellido Completo: '))
         dni = str(input('Ingrese su numero de DNI: '))
-        while len(str(dni)) != 8:
+        while len(str(dni)) != 8: #Si el DNI no cumple como minimo el requisito de tener 8 digitos no se procedera a seguir el programa
             print('Error vuelva a ingresar su numero de DNI: ')
-            dni = int(input('Ingrese otra vez su DNI:'))
+            dni = int(input('Ingrese otra vez su DNI:')) 
 
         print("=============== ID DEL ALUMNO ===============")
 
@@ -33,9 +33,9 @@ def datos(): #Función que se encargara del registro del padre y del id del alum
         while id_hijo< 1001:
             print('Vuelva a ingresar el ID correcto.')
             id_hijo = int(input('Ingrese el ID: '))
-        print("=============== INGRESO CORRECTAMENTE ===============")
+        print("=============== INGRESO CORRECTAMENTE ===============")#Validación de todos los datos y ID 
         break
-def menu(): #Menu de nuestro programa donde se visualizara las opciones para el padre, contendra 3 opciones
+def menu(): #Se muestra el menu de opciones
        
         
 
@@ -43,7 +43,7 @@ def menu(): #Menu de nuestro programa donde se visualizara las opciones para el 
         print("<1> Notas del estudiante")
         print("<2> Logros del estudiante")
         print("<3> SALIR")
-def main(): #Señalamos validaciones para que si el usuario ingresa SI o si se haga valido.
+def main(): #Se procede a señalar todas las opciones
     
     pregunta = "SI"
     list=[]
@@ -55,13 +55,13 @@ def main(): #Señalamos validaciones para que si el usuario ingresa SI o si se h
 
         opcion = int(input("OPCIÓN: "))
         while(opcion!=3):
-            if(opcion == 1): #Si el usuario ingresa la opción 1 se procede a llamar a la función def mostrar(n,cursos)
+            if(opcion == 1): #Si se elige la opción 1 se llamara a la función que contiene la libreria numpy
                 print("LAS NOTAS DEL ALUMNO SON: ")
                 print("=====================================================================================")
                 print(mostrar(n,cursos))
                 print("=====================================================================================")
             
-            if(opcion == 2): #Si el usuario ingresa la opcion '2' se procede a imprimir los logros del hijo y una matriz creada por print
+            if(opcion == 2): #Si se elige la opción 2 se imprimira todos los logros
                 print("LOS LOGROS DEL ALMUNO SON:")
                 print("=====================================================================================")
                 print("Competencias evualuadas:")
@@ -112,21 +112,28 @@ def main(): #Señalamos validaciones para que si el usuario ingresa SI o si se h
                 print("                         18                A   A   A           A                    ")
                 print("====================================================================================")
             opcion=int(input("INGRESE OTRA OPCIÓN: "))
-        if ( opcion==3): #Si el usuario ingresa la opción 3 se le preguntara si quiere dejar un comentario o no. y se guardara el comentario
+        if ( opcion==3): #La opción 3 mostrara la salida y la opción de dejar un comentario
             comentario = input("USTED SALIÓ DEL PROGRAMA, ¿QUIERE DEJAR UN COMENTARIO? SI/NO: ")
-            if (comentario == "SI" or comentario == "si"):
+            if (comentario == "SI" or comentario == "si" or comentario == "Si"):
                 coment = input("COMENTARIO: ")
                 list.append(coment)
-        pregunta = input("DESEA VER LAS NOTAS DE OTRO ALUMNO SI/NO: ")
-
-    print("===========COMENTARIOS DEL PROGRAMA===========")
-    if(len(list)==0):
-        print("NO HAY COMENTARIOS")
-    u = 1
-    for i in list:
-        print(u,"|",i)
-        u=u+1
-def show(): #Con esta función lo que se busca es mostrar la imagen de bienvenida al usuario para que sepa que ha iniciado el programa
+        pregunta2 = str(input("DESEA VER LAS NOTAS DE OTRO ALUMNO SI/NO: ")) #Opción si se quiere visualizar las notas de otro alumno
+        if pregunta2=="si" or pregunta2=="SI" or pregunta2=="Si": #Validación de las palabras "Si o si" para que el usuario no se confunda
+            datos()
+            menu()
+            main()
+        if pregunta2=="no" or pregunta2=="NO" or pregunta2=="No": #Validación de las palabras "NO o no" para que el usuario no se confunda
+           print("===========COMENTARIOS DEL PROGRAMA===========")
+        if(len(list)==0):
+            print("NO HAY COMENTARIOS")
+        u = 1
+        for i in list:
+            print(u,"|",i)
+            u=u+1 
+        break
+    print("La aplicacion ha concluido") #Finalización del programa y deseamos una feliz navidad debido a que el programa es para el fin de año
+    print("Muchas gracias por utilizar esta aplicacion y feliz navidad")
+def show():
     image = cv2.imread('3322.jpg')
     cv2.imshow('image',image)
     cv2.waitKey(0)
