@@ -92,7 +92,7 @@ def main(): #Señalamos validaciones para que si el usuario ingresa SI o si se h
                 print("                         3                 A   A   A           A                    ")
                 print("====================================================================================")
                 print("                         4                 B   A   B           B                    ")
-                print("ARTE Y CULTURA           5                 B   B   B           B               B    ")
+                print("ARTE                     5                 B   B   B           B               B    ")
                 print("====================================================================================")
                 print("                         6                 A   A   A           A                    ")
                 print("INGLES                   7                 B   A   B           B                    ")
