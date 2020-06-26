@@ -40,8 +40,8 @@ def menu(): #Menu de nuestro programa donde se visualizara las opciones para el 
         
 
         print("          MENU")
-        print("<1> CALCULAR SEGUNDO MAYOR")
-        print("<2> LOGROS DEL ESTUDIANTE")
+        print("<1> Notas del estudiante")
+        print("<2> Logros del estudiante")
         print("<3> SALIR")
 def main(): #Señalamos validaciones para que si el usuario ingresa SI o si se haga valido.
     
