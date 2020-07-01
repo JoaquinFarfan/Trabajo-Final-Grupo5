@@ -1,0 +1,56 @@
+#######Validacion de cuenta:
+cr=int(input("Escribe la contra:"))
+
+
+cursor= mydb.cursor()
+mysql="SELECT * FROM cuentapadres WHERE idcuentas=%s "
+cursor.execute(mysql,(nid,))
+result=cursor.fetchall()
+print(result)
+for datos in result:
+    print(str(datos[1])+" "+str(datos[2]))
+while nid>0:
+    if datos[1]!=nnom:
+        print("El nombre es incorrecto")
+        nnom=str(input("Ingrese el nombre de la cuenta:"))
+    else:
+        print("Hola Mundo")
+        break
+       
+#######Visualizar todos los alumnos en la base de datos:
+import mysql.connector as sql
+
+mydb = sql.connect(
+  host="127.0.0.1",
+  port="3306",
+  user="root",
+  password="facilito",
+  database="finaldb"
+)
+print("conexion establecida exitosamente")
+cursor= mydb.cursor()
+mysql="SELECT * FROM alumnos"
+cursor.execute(mysql)
+result=cursor.fetchall()
+#print(result)
+for datos in result:
+    print(datos)
+    
+######Seleccionar un id de un estudiante a visualizar:
+import mysql.connector as sql
+
+mydb = sql.connect(
+  host="127.0.0.1",
+  port="3306",
+  user="root",
+  password="facilito",
+  database="finaldb"
+)
+print("conexion establecida exitosamente")
+cursor= mydb.cursor()
+mysql="SELECT * FROM tbdeportistas WHERE id=%s "
+cursor.execute(mysql,("1",))
+result=cursor.fetchall()
+print(result)
+for datos in result:
+    print(str(datos[0])+" "+str(datos[1]))
